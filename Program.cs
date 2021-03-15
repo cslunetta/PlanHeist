@@ -7,6 +7,7 @@ namespace PlanHeist
   {
     static void Main(string[] args)
     {
+      // Build your team!!!
       Console.WriteLine("Plan Your Heist!");
 
       List<TeamMember> theTeam = new List<TeamMember>();
@@ -17,7 +18,7 @@ namespace PlanHeist
         string name = Console.ReadLine();
         if (name != "")
         {
-          Console.Write("What Is there skill level? (1-10): ");
+          Console.Write("What Is their skill level? (1-100): ");
           string skill = Console.ReadLine();
           int skillLevel = int.Parse(skill);
           Console.Write("How couragous are they? (0.0-2.0): ");
@@ -26,6 +27,8 @@ namespace PlanHeist
 
           TeamMember member = new TeamMember(name, skillLevel, courageFactor);
           theTeam.Add(member);
+          Console.WriteLine("");
+          Console.WriteLine("Add another member? (leave name blank to continue)");
         }
         else
         {
@@ -33,10 +36,25 @@ namespace PlanHeist
         }
 
       }
-      Console.WriteLine($"The team has {theTeam.Count} members ");
+      Console.WriteLine("");
+      Console.WriteLine($"The team has {theTeam.Count} member(s) ");
+      Console.WriteLine($"---------------------------------------");
+
+      // Difficulty based on teamSkill
+      int bankDifficulty = 100;
+      int teamSkill = 0;
       foreach (TeamMember member in theTeam)
       {
-        member.PrintTeam();
+        teamSkill += member.Skill;
+      }
+
+      if (teamSkill >= bankDifficulty)
+      {
+        Console.WriteLine("Success");
+      }
+      else
+      {
+        Console.WriteLine("Fail");
       }
     }
   }
