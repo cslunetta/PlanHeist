@@ -17,11 +17,11 @@ namespace PlanHeist
       Courage = courage;
     }
 
-    public void PrintTeam()
-    {
-      Console.WriteLine($"Member: {Name}");
-      Console.WriteLine($"Skill Level: {Skill}");
-      Console.WriteLine($"Courage Factor: {Courage}");
-    }
+    // public void PrintTeam()
+    // {
+    //   Console.WriteLine($"Member: {Name}");
+    //   Console.WriteLine($"Skill Level: {Skill}");
+    //   Console.WriteLine($"Courage Factor: {Courage}");
+    // }
   }
 }
