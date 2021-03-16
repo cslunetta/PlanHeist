@@ -13,9 +13,9 @@ namespace PlanHeist
     // Constructor
     public TeamMember(string name, int skill, decimal courage)
     {
-      Name = name;
-      Skill = skill;
-      Courage = courage;
+      this.Name = name;
+      this.Skill = skill;
+      this.Courage = courage;
     }
 
     public static void AddMember(List<TeamMember> theTeam)
