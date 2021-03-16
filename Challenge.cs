@@ -3,11 +3,10 @@ using System.Collections.Generic;
 
 namespace PlanHeist
 {
-  class Difficulty
+  public class Challenge
   {
-    public static void SkillCheck(List<TeamMember> theTeam)
+    public static void SkillCheck(List<TeamMember> theTeam, int difficulty, List<string> Results)
     {
-      int difficulty = 100;
       int luckValue = new Random().Next(-10, 10);
       int bankDifficulty = difficulty + luckValue;
       int teamSkill = 0;
@@ -22,10 +21,12 @@ namespace PlanHeist
       if (teamSkill >= bankDifficulty)
       {
         Console.WriteLine("Success");
+        Results.Add("Success");
       }
       else
       {
         Console.WriteLine("Fail");
+        Results.Add("Fail");
       }
     }
   }
